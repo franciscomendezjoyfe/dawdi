@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uso de estilos</title>
+
+    <style>
+        /* Modos de llamar a los estilos: etiqueta html, id, class */
+        p{font-size: 2em;}
+        #abc{font-size: 3em;color:blue}
+        .def{color:red}
+
+        /* Uso de Pseudo clases */
+        .mibody{background-color: cornsilk}
+        a{
+            color:red;
+            font-size: 16px;
+            text-decoration: underline;
+            transition: 0.15s;
+        }
+        a:link{
+            color:red;
+            font-size: 16px;
+            text-decoration: underline;
+        }
+        a:hover{
+            color:red;
+            font-size: 20px;
+            font-style: italic;
+            text-decoration: none;
+        }
+        a:active{
+            color:blue;
+            font-size: 16px;
+            font-style: italic;
+        }
+        a:visited{
+            color:green;
+            font-size: 16px;
+            font-style: italic;
+        }
+        a:focus:link{
+            color:red;
+            background-color: black;
+            font-size: 25px;
+            text-decoration: none;
+        }
+        input{background-color: blanchedalmond ;}
+        input:focus{
+            background-color: chartreuse;
+            caret-color: crimson;
+        }
+        hr{margin:50px 0px;}
+
+        .manifiesto{
+            color:darkgrey
+        }
+        .manifiesto::first-letter{
+            font-size:3em;
+            color: #f0ff00;
+        }
+        .manifiesto::first-line{
+            font-size:2em;
+            color:blueviolet ;
+        }
+        .manife{width: 70%;
+            text-align: center;
+        }
+
+        tbody tr:first-child{
+            background-color: darkolivegreen;
+        }
+        tr td{border-bottom: 1px solid gray;}
+        tbody tr:last-child{
+            background-color: darkred;
+            color: azure;
+        }
+        table{
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        nav{display: table;}
+        nav ul{display: table-row;}
+        nav ul li{
+            margin: 2em;
+            padding: 1em;
+            display: table-cell;
+        }
+        nav ul li:nth-child(odd){
+            background-color: gold;
+        }
+        nav ul li:nth-child(even){
+            background-color:deeppink;
+        }
+        ul li.active {
+            cursor:zoom-in ;
+            background-color:wheat;
+        }
+
+        @font-face {
+            font-family:'Halloween' ;
+            src: url(assets/fonts/SHLOP.ttf);
+        }
+
+        .fontHallo{
+            /* font-family: 'Halloween'; */
+            font-family: 'Moonless SC';
+        }
+
+    </style>
+</head>
+<body>
+    <h3> Ejemplo de llamadas de estilos</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <p id="abc">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <p class="def">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+    <hr>
+
+    <div class="mibody">
+        <h3>Estilos para las Pseudo clases</h3>
+        <p>A un estilo le podemos aplicar pseudo clases. El ejemplo más claro es el de los enlaces</p>
+        <br><br><br>
+        <h4>Etiquetas con pseudo clases</h4>
+        <table>
+            <tr>
+                <td><a target="_blank" href="https://www.joyfe.es">Joyfe</a></td>
+                <td><a target="_blank" href="https://www.cisco.com">Cisco</a></td>
+            </tr>
+            <tr>
+                <td><a target="_blank" href="https://www.google.com">Google</a></td>
+                <td><a target="_blank" href="https://www.marca.es">Marca</a></td>
+            </tr>
+            <tr>
+                <td><a target="_blank" href="https://www.youtube.com">Youtube</a></td>
+                <td><a target="_blank" href="https://www.classroom.google.com">Classroom</a></td>
+            </tr>
+        </table>
+    </div>
+    
+    <hr>
+        
+    <form action="">
+        <label for="campo1"></label>
+        <input id="campo1" type="text">
+    </form>
+
+    <hr>
+
+    <h3>First letter and first line</h3>
+    <div class="manife">
+        <p class="manifiesto">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Ipsam tempora facere officia nemo aliquam ipsa porro necessitatibus libero dicta, enim atque placeat.
+            Non asperiores magni dignissimos expedita quam totam fugiat!
+        </p>
+        <p class="manifiesto">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Ipsam tempora facere officia nemo aliquam ipsa porro necessitatibus libero dicta, enim atque placeat.
+            Non asperiores magni dignissimos expedita quam totam fugiat!
+        </p>
+    </div>
+    
+    <hr>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Posicion</th>
+                <th>Equipo</th>
+                <th>Puntos</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Real Madrid</td>
+                <td>22</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Barcelona</td>
+                <td>15</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Betis</td>
+                <td>13</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Atletico de Madrid</td>
+                <td>11</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Rayo Vallecano</td>
+                <td>9</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>5 equipos</th>
+            </tr>
+        </tfoot>
+    </table>
+
+    <hr>
+
+    <h3>CSS: uso de la pseudo clase nth-child</h3>
+    <nav>
+        <ul>
+            <li>Home</li>
+            <li>Ofertas</li>
+            <li>Catalogo</li>
+            <li>Situacion</li>
+            <li>FAQs</li>
+        </ul>
+    </nav>
+
+    <hr>
+
+    <h1 class="fontHallo">Ven a nuestra fiesta de halloween el 31 de octubre de 2022</h1>
+</body>
+</html>
